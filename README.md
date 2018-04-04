@@ -4,7 +4,7 @@
   
 ### Инструкция по установке:
 1. Создайте резервную копию вашего магазина и базы данных
-2. Загрузите архив с модулем [msphutkigrosh-1.0.0-pl.transport.zip](https://github.com/esasby/hgrosh/blob/master/CMS/Plugins/Modx/Minishop2/msphutkigrosh-1.0.0-pl.transport.zip)
+2. Загрузите архив с модулем [msphutkigrosh-1.0.0-pl.transport.zip](https://github.com/esasby/hutkigrosh-modx-minishop2-module/blob/master/msphutkigrosh-1.0.0-pl.transport.zip)
 3. В административной части Modx выберите `Приложения — Установщик — Загрузить дополнения — Загрузить пакет`. Выберите архив и нажмите `Установить`.
 4. Перейдите в меню `Приложения — miniShop2 — Настройки - Способы оплаты`.
 5. При необходимости добавьте новый способ оплаты с именем ХуткiГрош (Hutkigrosh). Если он уже существует, сделайте активным и назначьте способ доставки
