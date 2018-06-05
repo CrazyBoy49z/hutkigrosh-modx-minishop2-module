@@ -18,7 +18,6 @@ class HutkigroshProtocol
 
     private $ch; // curl object
     private $response; // тело ответа
-    private $status; // код статуса
 
     public $cookies_dir;
 
@@ -186,7 +185,7 @@ class HutkigroshProtocol
      * Добавляет новый счет в систему БелГазПромБанк
      *
      * @param array $data
-     *
+     * @deprecated не работает
      * @return bool|string
      */
     public function apiBgpbPay($data)
@@ -332,26 +331,22 @@ class HutkigroshProtocol
      */
     public function apiBillDelete($bill_id)
     {
-        $res = $this->requestDelete('Invoicing/Bill(' . $bill_id . ')');
-
-        if ($res) {
-            $array = $this->responseToArray();
-
-            if (is_array($array) && isset($array['status']) && isset($array['purchItemStatus'])) {
-                $this->status = (int)$array['status'];
-                $purchItemStatus = trim($array['purchItemStatus']); // статус счета
-
-                // есть ошибка
-                if ($this->status > 0) {
-                    $this->error = $this->getStatusError($this->status);
-                    return false;
-                }
-
-                return $purchItemStatus;
-            } else {
-                $this->error = 'Неверный ответ сервера';
-            }
-        }
+//        $res = $this->requestDelete('Invoicing/Bill(' . $bill_id . ')');
+//        if ($res) {
+//            $array = $this->responseToArray();
+//            if (is_array($array) && isset($array['status']) && isset($array['purchItemStatus'])) {
+//                $this->status = (int)$array['status'];
+//                $purchItemStatus = trim($array['purchItemStatus']); // статус счета
+//                // есть ошибка
+//                if ($this->status > 0) {
+//                    $this->error = $this->getStatusError($this->status);
+//                    return false;
+//                }
+//                return $purchItemStatus;
+//            } else {
+//                $this->error = 'Неверный ответ сервера';
+//            }
+//        }
 
         return false;
     }
@@ -365,70 +360,28 @@ class HutkigroshProtocol
      */
     public function apiBillStatus($bill_id)
     {
-        $res = $this->requestGet('Invoicing/BillStatus(' . $bill_id . ')');
-
-        if ($res) {
-            $array = $this->responseToArray();
-
-            if (is_array($array) && isset($array['status']) && isset($array['purchItemStatus'])) {
-                $this->status = (int)$array['status'];
-                $purchItemStatus = trim($array['purchItemStatus']); // статус счета
-
-                // есть ошибка
-                if ($this->status > 0) {
-                    $this->error = $this->getStatusError($this->status);
-                    return false;
-                }
-
-                return $purchItemStatus;
-            } else {
-                $this->error = 'Неверный ответ сервера';
-            }
-        }
+//        $res = $this->requestGet('Invoicing/BillStatus(' . $bill_id . ')');
+//
+//        if ($res) {
+//            $array = $this->responseToArray();
+//
+//            if (is_array($array) && isset($array['status']) && isset($array['purchItemStatus'])) {
+//                $this->status = (int)$array['status'];
+//                $purchItemStatus = trim($array['purchItemStatus']); // статус счета
+//
+//                // есть ошибка
+//                if ($this->status > 0) {
+//                    $this->error = $this->getStatusError($this->status);
+//                    return false;
+//                }
+//
+//                return $purchItemStatus;
+//            } else {
+//                $this->error = 'Неверный ответ сервера';
+//            }
+//        }
 
         return false;
-    }
-
-    /**
-     * Получить текст ошибки
-     *
-     * @return string
-     */
-    public function getError()
-    {
-        return 'Счет не выставлен! Произошла ошибка: ' . $this->error . '. <br> Повторите заказ.';
-    }
-
-    /**
-     * Ответ сервера в исходном виде
-     *
-     * @return mixed
-     */
-    public function getResponse()
-    {
-        return $this->response;
-    }
-
-    /**
-     * Статус ответа
-     *
-     * @return mixed
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Статус счета
-     *
-     * @param string $status
-     *
-     * @return string
-     */
-    public function getPurchItemStatus($status)
-    {
-        return (isset($this->purch_item_status[$status])) ? $this->purch_item_status[$status] : 'Статус не определен';
     }
 
     /**
@@ -512,7 +465,6 @@ class HutkigroshProtocol
             curl_setopt($this->ch, CURLOPT_COOKIEJAR, $cookies_path);
         }
         curl_setopt($this->ch, CURLOPT_COOKIEFILE, $cookies_path);
-
         $this->response = curl_exec($this->ch);
 
         if (curl_errno($this->ch)) {
@@ -540,22 +492,5 @@ class HutkigroshProtocol
             $array = json_decode(json_encode($xml), true);
         }
         return $array;
-    }
-
-    /**
-     * Описание ошибки на основе ее кода в ответе
-     *
-     * @param string $status
-     *
-     * @return string
-     */
-    public static function getStatusError($status)
-    {
-        return (isset(self::STATUS_ERRORS[$status])) ? self::STATUS_ERRORS[$status] : 'Неизвестная ошибка';
-    }
-
-    public function getStatusResponce()
-    {
-        return $this->status;
     }
 }
