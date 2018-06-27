@@ -1,0 +1,93 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5ca89004fbec454b34b47fbe92a71a63",
+    "packages": [
+        {
+            "name": "apache/log4php",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git-wip-us.apache.org/repos/asf/logging-log4php.git",
+                "reference": "cac428b6f67d2035af39784da1d1a299ef42fcf2"
+            },
+            "require": {
+                "php": ">=5.2.7"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/main/php/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "A versatile logging framework for PHP",
+            "homepage": "http://logging.apache.org/log4php/",
+            "keywords": [
+                "log",
+                "logging",
+                "php"
+            ],
+            "time": "2012-10-26T09:13:25+00:00"
+        },
+        {
+            "name": "esas/hutkigrosh-api-php",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/esasby/hutkigrosh-api-php.git",
+                "reference": "df20d207ab8663dcb92fe6c0735c8e09fe9cd18d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/esasby/hutkigrosh-api-php/zipball/df20d207ab8663dcb92fe6c0735c8e09fe9cd18d",
+                "reference": "df20d207ab8663dcb92fe6c0735c8e09fe9cd18d",
+                "shasum": ""
+            },
+            "require": {
+                "apache/log4php": "2.3.0",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">= 5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Esas",
+                    "email": "hutkigrosh@esas.com"
+                }
+            ],
+            "description": "Hutkigrosh API library",
+            "keywords": [
+                "api",
+                "esas",
+                "hutkigrosh",
+                "payment gateway"
+            ],
+            "time": "2018-06-27T13:43:33+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
