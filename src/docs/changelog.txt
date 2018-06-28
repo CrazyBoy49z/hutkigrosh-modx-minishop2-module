@@ -1,5 +1,9 @@
 Changelog for mspHutkigrosh.
 
+1.2.4
+==============
+- Использование composer (log4php, hutkigrosh-api-php)
+- Расширено логирование
 
 1.0.0 beta
 ==============

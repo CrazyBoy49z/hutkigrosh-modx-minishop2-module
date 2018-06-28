@@ -37,10 +37,10 @@
                     ).done(function (result) {
                         if (result.trim() == 'ok') {
                             $('#hutkigrosh_message').remove();
-                            $('#webpay').before('<div class="alert alert-success" id="hutkigrosh_message">{"hutkigrosh.alfaclick.msg.success" | lexicon}</div>');
+                            $('#hutkigrosh_buttons').before('<div class="alert alert-success" id="hutkigrosh_message">{"hutkigrosh.alfaclick.msg.success" | lexicon}</div>');
                         } else {
                             $('#hutkigrosh_message').remove();
-                            $('#webpay').before('<div class="alert alert-danger" id="hutkigrosh_message">{"hutkigrosh.alfaclick.msg.failed" | lexicon}</div>');
+                            $('#hutkigrosh_buttons').before('<div class="alert alert-danger" id="hutkigrosh_message">{"hutkigrosh.alfaclick.msg.failed" | lexicon}</div>');
                         }
                     })
                 })
