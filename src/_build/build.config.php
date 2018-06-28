@@ -6,7 +6,7 @@ define('PKG_EXTENDED', 'miniShop2');
 define('PKG_EXTENDED_LOWER', strtolower(PKG_EXTENDED));
 define('PKG_NAME_LOWER', strtolower(PKG_NAME));
 
-define('PKG_VERSION', '1.2.3');
+define('PKG_VERSION', '1.2.4');
 define('PKG_RELEASE', 'pl');
 define('PKG_AUTO_INSTALL', false);
 

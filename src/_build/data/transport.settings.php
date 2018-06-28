@@ -52,6 +52,14 @@ $tmp = array(
         'xtype' => 'numberfield',
         'value' => '',
     ),
+    'alfaclick_button' => array(
+        'xtype' => 'combo-boolean',
+        'value' => 'false',
+    ),
+    'webpay_button' => array(
+        'xtype' => 'combo-boolean',
+        'value' => 'false',
+    ),
     'success_resource_id' => array(
         'xtype' => 'numberfield',
         'value' => '',

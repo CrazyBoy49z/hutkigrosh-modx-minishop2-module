@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ca89004fbec454b34b47fbe92a71a63",
+    "content-hash": "5b3489ec489b64ccc77e83f4bedcfd33",
     "packages": [
         {
             "name": "apache/log4php",
@@ -38,16 +38,16 @@
         },
         {
             "name": "esas/hutkigrosh-api-php",
-            "version": "1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/esasby/hutkigrosh-api-php.git",
-                "reference": "df20d207ab8663dcb92fe6c0735c8e09fe9cd18d"
+                "reference": "874636e223b50d699d2e4171ff78017a407e7b27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/esasby/hutkigrosh-api-php/zipball/df20d207ab8663dcb92fe6c0735c8e09fe9cd18d",
-                "reference": "df20d207ab8663dcb92fe6c0735c8e09fe9cd18d",
+                "url": "https://api.github.com/repos/esasby/hutkigrosh-api-php/zipball/874636e223b50d699d2e4171ff78017a407e7b27",
+                "reference": "874636e223b50d699d2e4171ff78017a407e7b27",
                 "shasum": ""
             },
             "require": {
@@ -79,7 +79,7 @@
                 "hutkigrosh",
                 "payment gateway"
             ],
-            "time": "2018-06-27T13:43:33+00:00"
+            "time": "2018-06-28T12:11:51+00:00"
         }
     ],
     "packages-dev": [],

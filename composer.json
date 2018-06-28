@@ -2,7 +2,7 @@
   "name": "esas/hutkigrosh-modx-module",
   "description": "Hutkigrosh modx payment gateway integration",
   "require": {
-    "esas/hutkigrosh-api-php": "1.1.0"
+    "esas/hutkigrosh-api-php": "v1.2.0"
   },
   "authors": [
     {

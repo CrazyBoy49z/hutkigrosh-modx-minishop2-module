@@ -11,7 +11,6 @@ if (!isset($modx)) {
     $modx->getService('error', 'error.modError');
     $modx->setLogLevel(modX::LOG_LEVEL_ERROR);
 }
-//require_once $GLOBALS["modx"]->getOption('base_path') . 'core/components/minishop2/custom/payment/lib/SimpleAutoloader.php';
 $modx->error->message = null;
 
 switch ($_GET['action']) {

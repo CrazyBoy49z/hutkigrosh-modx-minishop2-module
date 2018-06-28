@@ -25,6 +25,8 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
     const CONFIG_HG_BILL_STATUS_PAYED = 'ms2_msphutkigrosh_bill_status_payed';
     const CONFIG_HG_BILL_STATUS_FAILED = 'ms2_msphutkigrosh_bill_status_failed';
     const CONFIG_HG_BILL_STATUS_CANCELED = 'ms2_msphutkigrosh_bill_status_canceled';
+    const CONFIG_HG_ALFACLICK_BUTTON = 'ms2_msphutkigrosh_alfaclick_button';
+    const CONFIG_HG_WEBPAY_BUTTON = 'ms2_msphutkigrosh_webpay_button';
 
     const CONFIG_HG_SUCCESS_RESOURCE_ID = 'ms2_msphutkigrosh_success_resource_id';
     const CONFIG_HG_FAILED_RESOURCE_ID = 'ms2_msphutkigrosh_failed_resource_id';
@@ -181,7 +183,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function isAlfaclickButtonEnabled()
     {
-        // TODO: Implement isAlfaclickButtonEnabled() method.
+        return self::checkOn($this->modx->getOption(self::CONFIG_HG_ALFACLICK_BUTTON, null, '0'));
     }
 
     /**
@@ -190,6 +192,6 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function isWebpayButtonEnabled()
     {
-        // TODO: Implement isWebpayButtonEnabled() method.
+        return self::checkOn($this->modx->getOption(self::CONFIG_HG_WEBPAY_BUTTON, null, '0'));
     }
 }

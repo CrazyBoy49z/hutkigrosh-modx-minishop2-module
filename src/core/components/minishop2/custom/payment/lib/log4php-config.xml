@@ -1,9 +1,9 @@
 <configuration xmlns="http://logging.apache.org/log4php/">
     <appender name="fileAppender" class="LoggerAppenderFile">
         <layout class="LoggerLayoutPattern">
-            <param name="conversionPattern" value="%date{Y-m-d H:i:s,u} | %logger{0} | %-5level | %msg%n"/>
+            <param name="conversionPattern" value="%date{Y-m-d H:i:s,u} | %logger{0} | %-5level | %msg %n%throwable"/>
         </layout>
-        <param name="file" value="hutkigrosh.log"/>
+        <param name="file" value="/var/log/hutkigrosh.log"/>
     </appender>
     <root>
         <level value="DEBUG"/>
