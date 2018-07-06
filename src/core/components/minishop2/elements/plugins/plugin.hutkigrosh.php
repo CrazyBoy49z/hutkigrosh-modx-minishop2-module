@@ -15,7 +15,7 @@ switch ($modx->event->name) {
         Logger::configure(array(
             'rootLogger' => array(
                 'appenders' => array('fileAppender'),
-                'level' => array('default'),
+                'level' => 'INFO',
             ),
             'appenders' => array(
                 'fileAppender' => array(
