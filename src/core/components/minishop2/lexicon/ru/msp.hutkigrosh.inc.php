@@ -47,6 +47,9 @@ $_lang['setting_ms2_msphutkigrosh_alfaclick_button_desc'] = 'Если включ
 $_lang['setting_ms2_msphutkigrosh_webpay_button'] = 'Кнопка Webpay';
 $_lang['setting_ms2_msphutkigrosh_webpay_button_desc'] = 'Если включена, то на итоговом экране клиенту отобразится кнопка для оплаты счета картой (переход на Webpay)';
 
+$_lang['setting_ms2_msphutkigrosh_due_interval'] = 'Срок действия счета (дней)';
+$_lang['setting_ms2_msphutkigrosh_due_interval_desc'] = 'Как долго счет, будет доступен в ЕРИП для оплаты';
+
 $_lang['hutkigrosh.webpay.msg.success'] = 'Счет успешно оплачен через WebPay';
 $_lang['hutkigrosh.webpay.msg.failed'] = 'Ошибка оплаты счета через WebPay';
 $_lang['hutkigrosh.alfaclick.label'] = 'Выставить в Альфаклик';

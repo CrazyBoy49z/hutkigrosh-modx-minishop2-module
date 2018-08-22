@@ -10,6 +10,7 @@ namespace esas\hutkigrosh\controllers;
 
 
 use esas\hutkigrosh\wrappers\ConfigurationWrapperModxMinishop2;
+use esas\hutkigrosh\wrappers\OrderWrapper;
 
 class ControllerWebpayFormModxMinishop2 extends ControllerWebpayForm
 {
@@ -24,11 +25,12 @@ class ControllerWebpayFormModxMinishop2 extends ControllerWebpayForm
         $this->modx = $configurationWrapper->modx;
     }
 
+
     /**
      * Основная часть URL для возврата с формы webpay (чаще всего current_url)
      * @return string
      */
-    public function getReturnUrl()
+    public function getReturnUrl(OrderWrapper $orderWrapper)
     {
         return $this->modx->makeUrl($this->modx->resource->get("id"), '', array("msorder" => $_GET['msorder']), 'full', array("xhtml_urls" => false));
     }

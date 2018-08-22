@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b3489ec489b64ccc77e83f4bedcfd33",
+    "content-hash": "99b9bc102a08e20f91f920b8dbab7d7e",
     "packages": [
         {
             "name": "apache/log4php",
@@ -38,23 +38,23 @@
         },
         {
             "name": "esas/hutkigrosh-api-php",
-            "version": "v1.2.0",
+            "version": "v1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/esasby/hutkigrosh-api-php.git",
-                "reference": "874636e223b50d699d2e4171ff78017a407e7b27"
+                "reference": "8c50714f61b6046e6f2aeaaf6af4dccace3808cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/esasby/hutkigrosh-api-php/zipball/874636e223b50d699d2e4171ff78017a407e7b27",
-                "reference": "874636e223b50d699d2e4171ff78017a407e7b27",
+                "url": "https://api.github.com/repos/esasby/hutkigrosh-api-php/zipball/8c50714f61b6046e6f2aeaaf6af4dccace3808cf",
+                "reference": "8c50714f61b6046e6f2aeaaf6af4dccace3808cf",
                 "shasum": ""
             },
             "require": {
                 "apache/log4php": "2.3.0",
                 "ext-curl": "*",
                 "ext-json": "*",
-                "php": ">= 5.3.0"
+                "php": ">= 5.5.0"
             },
             "type": "library",
             "autoload": {
@@ -79,7 +79,7 @@
                 "hutkigrosh",
                 "payment gateway"
             ],
-            "time": "2018-06-28T12:11:51+00:00"
+            "time": "2018-08-22T10:16:18+00:00"
         }
     ],
     "packages-dev": [],

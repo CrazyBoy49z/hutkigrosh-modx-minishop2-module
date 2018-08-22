@@ -15,7 +15,7 @@ $orderWrapper = new OrderWrapperModxMinishop2($order);
 $chunkProperties = array('order_number' => $orderWrapper->getOrderId());
 if ($configuration->isWebpayButtonEnabled()) {
     $controller = new ControllerWebpayFormModxMinishop2($configuration);
-    $webpayResp = $controller->process($orderWrapper->getBillId());
+    $webpayResp = $controller->process($orderWrapper);
     $chunkProperties['webpay_button_enabled'] = true;
     $chunkProperties['webpay_status'] = $_GET['webpay_status']; // при возврате с webpay, статус передается в параметрах адреса
     $chunkProperties['webpay_form'] = $webpayResp->getHtmlForm(); // при возврате с webpay, статус передается в параметрах адреса

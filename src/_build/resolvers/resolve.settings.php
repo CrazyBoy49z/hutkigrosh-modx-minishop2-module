@@ -12,7 +12,7 @@ if ($object->xpdo) {
         case xPDOTransport::ACTION_UNINSTALL:
             /* @var msPayment $payment */
             $modx->removeCollection('msPayment', array('class' => 'Hutkigrosh'));
-            $modx->removeCollection('modSystemSetting', array('key:LIKE' => 'ms2\_msphutkigrosh\_%'));
+            $modx->removeCollection('modSystemSetting', array('key:LIKE' => '%hutkigrosh%'));
             break;
     }
 }

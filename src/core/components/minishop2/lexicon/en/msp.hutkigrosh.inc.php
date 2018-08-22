@@ -47,6 +47,9 @@ $_lang['setting_ms2_msphutkigrosh_alfaclick_button_desc'] = 'If "true" then cust
 $_lang['setting_ms2_msphutkigrosh_webpay_button'] = 'Button Webpay';
 $_lang['setting_ms2_msphutkigrosh_webpay_button_desc'] = 'If "true" then custoer will get "Pay with card" button on success page';
 
+$_lang['setting_ms2_msphutkigrosh_due_interval'] = 'Bill due interval (days)';
+$_lang['setting_ms2_msphutkigrosh_due_interval_desc'] = 'How many days new bill will be available for payment';
+
 $_lang['hutkigrosh.webpay.msg.success'] = 'Webpay: payment completed!';
 $_lang['hutkigrosh.webpay.msg.failed'] = 'Webpay: payment failed!';
 $_lang['hutkigrosh.alfaclick.label'] = 'Add to Alfaclick';

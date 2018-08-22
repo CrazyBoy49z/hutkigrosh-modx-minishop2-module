@@ -6,7 +6,7 @@ define('PKG_EXTENDED', 'miniShop2');
 define('PKG_EXTENDED_LOWER', strtolower(PKG_EXTENDED));
 define('PKG_NAME_LOWER', strtolower(PKG_NAME));
 
-define('PKG_VERSION', '1.2.5');
+define('PKG_VERSION', '1.2.6');
 define('PKG_RELEASE', 'pl');
 define('PKG_AUTO_INSTALL', false);
 
@@ -35,7 +35,7 @@ define('MODX_ASSETS_URL', MODX_BASE_URL . 'assets/');
 /* define build options */
 //define('BUILD_MENU_UPDATE', false);
 //define('BUILD_ACTION_UPDATE', false);
-define('BUILD_SETTING_UPDATE', false);
+define('BUILD_SETTING_UPDATE', false); // если выставить true, то после установки апдейта, все настройки обнулятся
 define('BUILD_CHUNK_UPDATE', true);
 
 define('BUILD_SNIPPET_UPDATE', true);

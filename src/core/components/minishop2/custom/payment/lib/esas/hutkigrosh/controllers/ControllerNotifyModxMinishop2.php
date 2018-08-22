@@ -9,6 +9,7 @@ namespace esas\hutkigrosh\controllers;
  * Time: 11:55
  */
 use esas\hutkigrosh\wrappers\ConfigurationWrapperModxMinishop2;
+use esas\hutkigrosh\wrappers\OrderWrapper;
 use esas\hutkigrosh\wrappers\OrderWrapperModxMinishop2;
 
 class ControllerNotifyModxMinishop2 extends ControllerNotify
@@ -24,15 +25,14 @@ class ControllerNotifyModxMinishop2 extends ControllerNotify
         $this->modx = $configurationWrapper->modx;
     }
 
-
     /**
-     * По локальному идентификатору заказа возвращает wrapper
+     * По локальному номеру счета (номеру заказа) возвращает wrapper
      * @param $orderId
-     * @return \esas\hutkigrosh\wrappers\OrderWrapper
+     * @return OrderWrapper
      */
-    public function getOrderWrapper($orderId)
+    public function getOrderWrapperByOrderNumber($orderNumber)
     {
-        $order = $this->configurationWrapper->modx->getObject('msOrder', $orderId);
+        $order = $this->configurationWrapper->modx->getObject('msOrder', $orderNumber);
         return empty($order) ? null : new OrderWrapperModxMinishop2($order);
     }
 }

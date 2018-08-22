@@ -1,5 +1,10 @@
 Changelog for mspHutkigrosh.
 
+1.2.6
+==============
+- Добавлена настройка "Срок действия счета"
+- Для безопасности файлы логов перенесены в каталог modx/core/vendor/esas/hutkigrosh-api-php/logs/
+
 1.2.4
 ==============
 - Использование composer (log4php, hutkigrosh-api-php)

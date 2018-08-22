@@ -2,6 +2,7 @@
 
 namespace esas\hutkigrosh\wrappers;
 
+use esas\hutkigrosh\ConfigurationFieldsModx;
 use modX;
 
 /**
@@ -12,25 +13,6 @@ use modX;
  */
 class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
 {
-    const CONFIG_HG_SHOP_NAME = 'ms2_msphutkigrosh_shop_name';
-    const CONFIG_HG_LOGIN = 'ms2_msphutkigrosh_hg_login';
-    const CONFIG_HG_PASSWORD = 'ms2_msphutkigrosh_hg_password';
-    const CONFIG_HG_ERIP_ID = 'ms2_msphutkigrosh_erip_id';
-    const CONFIG_HG_SANDBOX = 'ms2_msphutkigrosh_sandbox';
-    const CONFIG_HG_EMAIL_NOTIFICATION = 'ms2_msphutkigrosh_notification_email';
-    const CONFIG_HG_SMS_NOTIFICATION = 'ms2_msphutkigrosh_notification_sms';
-    const CONFIG_HG_PAYMENT_METHOD_NAME = 'ms2_msphutkigrosh_payment_method_description';
-    const CONFIG_HG_PAYMENT_METHOD_DESCRIPTION = 'ms2_msphutkigrosh_payment_method_description';
-    const CONFIG_HG_BILL_STATUS_PENDING = 'ms2_msphutkigrosh_bill_status_pending';
-    const CONFIG_HG_BILL_STATUS_PAYED = 'ms2_msphutkigrosh_bill_status_payed';
-    const CONFIG_HG_BILL_STATUS_FAILED = 'ms2_msphutkigrosh_bill_status_failed';
-    const CONFIG_HG_BILL_STATUS_CANCELED = 'ms2_msphutkigrosh_bill_status_canceled';
-    const CONFIG_HG_ALFACLICK_BUTTON = 'ms2_msphutkigrosh_alfaclick_button';
-    const CONFIG_HG_WEBPAY_BUTTON = 'ms2_msphutkigrosh_webpay_button';
-
-    const CONFIG_HG_SUCCESS_RESOURCE_ID = 'ms2_msphutkigrosh_success_resource_id';
-    const CONFIG_HG_FAILED_RESOURCE_ID = 'ms2_msphutkigrosh_failed_resource_id';
-
     /** @var modX $modx */
     public $modx;
 
@@ -40,6 +22,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function __construct(&$modx)
     {
+        parent::__construct();
         $this->modx = $modx;
     }
 
@@ -49,7 +32,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function getShopName()
     {
-        return $this->modx->getOption(self::CONFIG_HG_SHOP_NAME, null, '');
+        return $this->getOption(ConfigurationFieldsModx::SHOP_NAME, true);
     }
 
     /**
@@ -58,7 +41,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function getHutkigroshLogin()
     {
-        return $this->modx->getOption(self::CONFIG_HG_LOGIN, null, '');
+        return $this->getOption(ConfigurationFieldsModx::LOGIN, true);
     }
 
     /**
@@ -67,7 +50,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function getHutkigroshPassword()
     {
-        return $this->modx->getOption(self::CONFIG_HG_PASSWORD, null, '');
+        return $this->getOption(ConfigurationFieldsModx::PASSWORD, true);
     }
 
     /**
@@ -76,7 +59,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function isSandbox()
     {
-        return self::checkOn($this->modx->getOption(self::CONFIG_HG_SANDBOX, null, '0'));
+        return $this->checkOn(ConfigurationFieldsModx::SANDBOX);
     }
 
     /**
@@ -85,7 +68,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function getEripId()
     {
-        return $this->modx->getOption(self::CONFIG_HG_ERIP_ID, null, '');
+        return $this->getOption(ConfigurationFieldsModx::ERIP_ID, true);
     }
 
     /**
@@ -94,7 +77,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function isEmailNotification()
     {
-        return self::checkOn($this->modx->getOption(self::CONFIG_HG_EMAIL_NOTIFICATION, null, '0'));
+        return $this->checkOn(ConfigurationFieldsModx::EMAIL_NOTIFICATION);
     }
 
     /**
@@ -103,7 +86,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function isSmsNotification()
     {
-        return self::checkOn($this->modx->getOption(self::CONFIG_HG_SMS_NOTIFICATION, null, '0'));
+        return $this->checkOn(ConfigurationFieldsModx::SMS_NOTIFICATION);
     }
 
     /**
@@ -122,7 +105,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function getBillStatusPending()
     {
-        return $this->modx->getOption(self::CONFIG_HG_BILL_STATUS_PENDING, null, '');
+        return $this->getOption(ConfigurationFieldsModx::BILL_STATUS_PENDING, true);
     }
 
     /**
@@ -131,7 +114,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function getBillStatusPayed()
     {
-        return $this->modx->getOption(self::CONFIG_HG_BILL_STATUS_PAYED, null, '');
+        return $this->getOption(ConfigurationFieldsModx::BILL_STATUS_PAYED, true);
     }
 
     /**
@@ -140,7 +123,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function getBillStatusFailed()
     {
-        return $this->modx->getOption(self::CONFIG_HG_BILL_STATUS_FAILED, null, '');
+        return $this->getOption(ConfigurationFieldsModx::BILL_STATUS_FAILED, true);
     }
 
     /**
@@ -149,32 +132,23 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function getBillStatusCanceled()
     {
-        return $this->modx->getOption(self::CONFIG_HG_BILL_STATUS_CANCELED, null, '');
+        return $this->getOption(ConfigurationFieldsModx::BILL_STATUS_CANCELED, true);
     }
 
     public function getSuccessResourceId()
     {
-        return $this->modx->getOption(self::CONFIG_HG_SUCCESS_RESOURCE_ID, null, '');
+        return $this->getOption(ConfigurationFieldsModx::SUCCESS_RESOURCE_ID,true);
     }
 
     public function getFailedResourceId()
     {
-        return $this->modx->getOption(self::CONFIG_HG_FAILED_RESOURCE_ID, null, '');
+        return $this->getOption(ConfigurationFieldsModx::FAILED_RESOURCE_ID, true);
     }
 
-    private static function checkOn($value)
+    private function checkOn($key)
     {
+        $value = $this->modx->getOption('ms2_msp' . $key, null, '0');
         return $value == '1' || $value == "true";
-    }
-
-    /**
-     * Описание системы ХуткиГрош, отображаемое клиенту на этапе оформления заказа
-     * @return string
-     *
-     */
-    public function getPaymentMethodDescription()
-    {
-        // TODO: Implement getPaymentMethodDescription() method.
     }
 
     /**
@@ -183,7 +157,7 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function isAlfaclickButtonEnabled()
     {
-        return self::checkOn($this->modx->getOption(self::CONFIG_HG_ALFACLICK_BUTTON, null, '0'));
+        return $this->checkOn(ConfigurationFieldsModx::ALFACLICK_BUTTON);
     }
 
     /**
@@ -192,6 +166,52 @@ class ConfigurationWrapperModxMinishop2 extends ConfigurationWrapper
      */
     public function isWebpayButtonEnabled()
     {
-        return self::checkOn($this->modx->getOption(self::CONFIG_HG_WEBPAY_BUTTON, null, '0'));
+        return $this->checkOn(ConfigurationFieldsModx::WEBPAY_BUTTON);
+    }
+
+    /**
+     * Название системы ХуткиГрош, отображаемое клиенту на этапе оформления заказа
+     * @return string
+     */
+    public function getPaymentMethodName()
+    {
+        // TODO: не используется
+    }
+
+    /**
+     * Описание системы ХуткиГрош, отображаемое клиенту на этапе оформления заказа
+     * @return string
+     */
+    public function getPaymentMethodDetails()
+    {
+        // TODO: не используется
+    }
+
+    /***
+     * В некоторых CMS не получается в настройках хранить html, поэтому использует текст итогового экрана по умолчанию,
+     * в который проставлятся значение ERIPPATh
+     * @return string
+     */
+    public function getEripPath()
+    {
+        // TODO: не используется
+    }
+
+    /**
+     * Какой срок действия счета после его выставления (в днях)
+     * @return string
+     */
+    public function getDueInterval()
+    {
+        return $this->getOption(ConfigurationFieldsModx::DUE_INTERVAL, true);
+    }
+
+    public function getOption($key, $warn = false)
+    {
+        $value = $this->modx->getOption('ms2_msp' . $key, null, '');
+        if ($warn)
+            return $this->warnIfEmpty($value, $key);
+        else
+            return $value;
     }
 }

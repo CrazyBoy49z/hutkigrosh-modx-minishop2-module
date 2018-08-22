@@ -5,66 +5,75 @@
  * Date: 12.03.2018
  * Time: 14:34
  */
+if(!class_exists('EsasAutoloader')) {
+    require_once dirname(dirname(dirname(__FILE__))) . '/core/components/minishop2/custom/payment/lib/EsasAutoloader.php';
+}
+
+use esas\hutkigrosh\ConfigurationFieldsModx;
 
 $settings = array();
 $tmp = array(
-    'shop_name' => array(
+    ConfigurationFieldsModx::SHOP_NAME => array(
         'xtype' => 'textfield',
         'value' => '',
     ),
-    'hg_login' => array(
+    ConfigurationFieldsModx::LOGIN => array(
         'xtype' => 'textfield',
         'value' => '',
     ),
-    'hg_password' => array(
+    ConfigurationFieldsModx::PASSWORD => array(
         'xtype' => 'text-password',
         'value' => '',
     ),
-    'erip_id' => array(
+    ConfigurationFieldsModx::ERIP_ID => array(
         'xtype' => 'textfield',
         'value' => '',
     ),
-    'sandbox' => array(
+    ConfigurationFieldsModx::SANDBOX => array(
         'xtype' => 'combo-boolean',
         'value' => 'false',
     ),
-    'notification_email' => array(
+    ConfigurationFieldsModx::EMAIL_NOTIFICATION => array(
         'xtype' => 'combo-boolean',
         'value' => 'false',
     ),
-    'notification_sms' => array(
+    ConfigurationFieldsModx::SMS_NOTIFICATION => array(
         'xtype' => 'combo-boolean',
         'value' => 'false',
     ),
-    'bill_status_pending' => array(
+    ConfigurationFieldsModx::BILL_STATUS_PENDING => array(
         'xtype' => 'numberfield',
         'value' => '',
     ),
-    'bill_status_payed' => array(
+    ConfigurationFieldsModx::BILL_STATUS_PAYED => array(
         'xtype' => 'numberfield',
         'value' => '',
     ),
-    'bill_status_failed' => array(
+    ConfigurationFieldsModx::BILL_STATUS_FAILED => array(
         'xtype' => 'numberfield',
         'value' => '',
     ),
-    'bill_status_canceled' => array(
+    ConfigurationFieldsModx::BILL_STATUS_CANCELED => array(
         'xtype' => 'numberfield',
         'value' => '',
     ),
-    'alfaclick_button' => array(
+    ConfigurationFieldsModx::ALFACLICK_BUTTON => array(
         'xtype' => 'combo-boolean',
         'value' => 'false',
     ),
-    'webpay_button' => array(
+    ConfigurationFieldsModx::WEBPAY_BUTTON => array(
         'xtype' => 'combo-boolean',
         'value' => 'false',
     ),
-    'success_resource_id' => array(
+    ConfigurationFieldsModx::DUE_INTERVAL=> array(
         'xtype' => 'numberfield',
         'value' => '',
     ),
-    'failed_resource_id' => array(
+    ConfigurationFieldsModx::SUCCESS_RESOURCE_ID => array(
+        'xtype' => 'numberfield',
+        'value' => '',
+    ),
+    ConfigurationFieldsModx::FAILED_RESOURCE_ID => array(
         'xtype' => 'numberfield',
         'value' => '',
     ),
@@ -74,7 +83,7 @@ foreach ($tmp as $k => $v) {
     $setting = $modx->newObject('modSystemSetting');
     $setting->fromArray(array_merge(
         array(
-            'key' => 'ms2_msphutkigrosh_' . $k,
+            'key' => 'ms2_msp' . $k,
             'namespace' => 'minishop2',
             'area' => 'ms2_payment',
         ), $v
